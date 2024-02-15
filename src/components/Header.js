@@ -52,6 +52,12 @@ const Header = () => {
             </a>
           </li>
         </ul>
+        <a
+          href="#"
+          className="bg-orange-400 text-white p-2 px-4 rounded-md flex items-center gap-2"
+        >
+          Login
+        </a>
       </div>
     </header>
   );

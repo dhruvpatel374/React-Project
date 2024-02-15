@@ -2,16 +2,18 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import CDN_URL from "../utils/constants";
 
 const Restaurantcard = (props) => {
-  const { resData } = props;
-  // sohrtcut if we don't want to writee resData.data here
   const {
-    cloudinaryImageId,
     name,
+    costForTwo,
     avgRating,
-    aggregatedDiscountInfo,
     cuisines,
+    cloudinaryImageId,
+    aggregatedDiscountInfoV3,
     locality,
-  } = resData?.data;
+  } = props?.resData?.info;
+
+  // sohrtcut if we don't want to writee resData.data here
+
   return (
     <div>
       <div className="overlay-container">
@@ -22,11 +24,11 @@ const Restaurantcard = (props) => {
         />
         <div className="overlay w-full rounded-md p-2 px-3 ">
           <p className="text-xl font-bold flex gap-2 flex-wrap">
-            {aggregatedDiscountInfo?.header
-              ? aggregatedDiscountInfo.header
+            {aggregatedDiscountInfoV3?.header
+              ? aggregatedDiscountInfoV3.header
               : ""}{" "}
-            {aggregatedDiscountInfo?.subHeader
-              ? aggregatedDiscountInfo.subHeader
+            {aggregatedDiscountInfoV3?.subHeader
+              ? aggregatedDiscountInfoV3.subHeader
               : ""}
           </p>
         </div>
